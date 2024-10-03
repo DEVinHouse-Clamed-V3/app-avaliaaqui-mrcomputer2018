@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 export const presentationStyles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
-        marginHorizontal: 16,
-        marginVertical: 30,
+        backgroundColor: "#f1f1f1",
         justifyContent: "center",
+        alignItems: "center",
+        padding: 20,
     },
     imageArea: {
         flexDirection: "row",
@@ -35,7 +35,7 @@ export const presentationStyles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 18,
-        color: "#555",
+        color: "#666",
         textAlign: "center",
     },
     buttonArea: {
