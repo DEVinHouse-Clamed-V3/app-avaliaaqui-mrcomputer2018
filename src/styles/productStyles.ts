@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export const productStyles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        backgroundColor: "#fff",
+        padding: 20,
     },
     text: {
         fontSize: 20,
