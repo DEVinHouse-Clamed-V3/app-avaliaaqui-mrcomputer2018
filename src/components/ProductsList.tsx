@@ -1,16 +1,54 @@
-import { View, Text } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { productsListStyles } from '../styles/productsListStyles';
+import Button from './Button';
 
-type ProductsListProps = {
+type Product = {
+    id: number;
     name: string;
+    price: string;
+    brand: string;
+    description: string;
+    image: string;
 }
 
-export default function ProductsList({ name }: ProductsListProps) {
+type ProductsListProps = {
+    item: Product;
+}
+
+
+export default function ProductsList({ item }: ProductsListProps) {
     return (
         <View style={ productsListStyles.container}>
-            <Text>
-                { name }
-            </Text>
+            <Image 
+                style={ productsListStyles.image }
+                source={{ uri: item.image }}
+            />
+
+            <View style= { productsListStyles.detailsArea}>
+                <Text style={ productsListStyles.name }>
+                    { item.name }
+                </Text>
+                <Text style={ productsListStyles.brand }>
+                    { item.brand}
+                </Text>
+                <Text style={ productsListStyles.description }>
+                    { item.description }
+                </Text>
+                <Text style={ productsListStyles.price }>
+                    { item.price }
+                </Text> 
+                
+                <View style={{ marginTop: 10 }}>
+                    <Button 
+                        title="avaliar" 
+                        width={100}
+                        bgColor="#E59500"
+                        handleAction={() => {}}
+                        fontSize={14}
+                    /> 
+                </View>
+                            
+            </View>
         </View>
     );
 }

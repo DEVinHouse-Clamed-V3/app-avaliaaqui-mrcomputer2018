@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { productStyles } from '../styles/productStyles';
+import ProductsList from '../components/ProductsList';
+
+type Product = {
+    id: number;
+    name: string;
+    price: string;
+    brand: string;
+    description: string;
+    image: string;
+}
 
 export default function Products() {
 
-    const [products, setProducts] = useState([
+    const [products, setProducts] = useState<Product[]>([
         {
             "id": 1,
             "name": "Vingadores: Ultimato (Blu-ray)",
@@ -17,7 +27,7 @@ export default function Products() {
 
     const [ loading, setLoading ] = useState(false);
     const [ search, setSearch ] = useState('');
-    const [ filteredProducts, setFilteredProducts ] = useState([]);
+    const [ filteredProducts, setFilteredProducts ] = useState<Product[]>([]);
 
     return (
         <View style={ productStyles.container }>
@@ -27,10 +37,8 @@ export default function Products() {
             <FlatList 
                 data={products}
                 keyExtractor={item => item.id.toString()}
-                renderItem={({ item }) => (
-                    <Text style={ productStyles.text }>
-                        {item.name}
-                    </Text>
+                renderItem={({ item }: { item: Product }) => (
+                    <ProductsList item={item} />
                 )}
                 showsVerticalScrollIndicator={false}
                 ListEmptyComponent={() => (
