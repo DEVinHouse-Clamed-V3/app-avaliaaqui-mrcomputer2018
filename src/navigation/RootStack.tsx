@@ -20,6 +20,7 @@ export default function RootStack() {
                 name="Lista de Produtos" 
                 component={Products}
                 options={{
+                    title: "Produtos"
                 }} 
             />
         </Stack.Navigator>

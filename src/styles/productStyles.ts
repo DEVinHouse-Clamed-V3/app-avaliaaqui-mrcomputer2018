@@ -10,4 +10,10 @@ export const productStyles = StyleSheet.create({
         fontSize: 20,
         color: "blue",
     },
+    title: {
+        fontSize: 24,
+        fontWeight: "bold",
+        color: "#333",
+        marginBottom: 20,
+    },
 });

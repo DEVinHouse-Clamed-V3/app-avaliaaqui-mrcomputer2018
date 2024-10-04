@@ -21,6 +21,9 @@ export default function Products() {
 
     return (
         <View style={ productStyles.container }>
+            <Text style={ productStyles.title }>
+                Lista de Produtos
+            </Text>
             <FlatList 
                 data={products}
                 keyExtractor={item => item.id.toString()}
