@@ -8,7 +8,9 @@ type ProductsListProps = {
 export default function ProductsList({ name }: ProductsListProps) {
     return (
         <View style={ productsListStyles.container}>
-            <Text>{name}</Text>
+            <Text>
+                { name }
+            </Text>
         </View>
     );
 }
