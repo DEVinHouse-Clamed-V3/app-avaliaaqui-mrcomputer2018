@@ -11,8 +11,10 @@ type ButtonProps = {
 export default function Button({ title, width, handleAction, bgColor } : ButtonProps) {
     return (
         <TouchableOpacity
-        style={[ buttonStyles.button, { backgroundColor: bgColor, width: typeof width === 'string' ? parseInt(width) : width }]} 
-        onPress={() => {}}>
+        style={[ buttonStyles.button, 
+            { backgroundColor: bgColor, width: 
+                typeof width === 'string' ? parseInt(width) : width }]} 
+        onPress={() => handleAction()}>
             <Text style={ buttonStyles.textButton }>
                 {title}
             </Text>

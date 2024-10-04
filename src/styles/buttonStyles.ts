@@ -9,7 +9,7 @@ export const buttonStyles = StyleSheet.create({
         borderRadius: 16,
     },
     textButton: {
-        color: "#fff",
+        color: "#333",
         fontSize: 20,
         fontWeight: "bold",
         textTransform: "uppercase",

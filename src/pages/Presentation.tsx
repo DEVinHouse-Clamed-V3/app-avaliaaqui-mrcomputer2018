@@ -3,7 +3,11 @@ import { View, Text, SafeAreaView, Image } from 'react-native';
 import { presentationStyles } from '../styles/presentationStyles';
 import Button from '../components/Button';
 
-export default function Presentation() {
+export default function Presentation({navigation}: any) {
+
+    function handleNavigateToProducts() {
+        navigation.navigate('Lista de Produtos');
+    }
     return (
         <SafeAreaView style={ presentationStyles.container }>
             <StatusBar  style="auto" />
@@ -40,8 +44,8 @@ export default function Presentation() {
                 <Button 
                     title="Entrar"
                     width={160 }
-                    handleAction={() => {}}
-                    bgColor="#333"
+                    handleAction={handleNavigateToProducts}
+                    bgColor="#E59500"
                 />
             </View>
 
