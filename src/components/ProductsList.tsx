@@ -21,7 +21,7 @@ export default function ProductsList({ item }: ProductsListProps) {
         <View style={ productsListStyles.container}>
             <Image 
                 style={ productsListStyles.image }
-                source={{ uri: item.image }}
+                source={{uri: item.image}}
             />
 
             <View style= { productsListStyles.detailsArea}>

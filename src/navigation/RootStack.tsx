@@ -20,8 +20,12 @@ export default function RootStack() {
                 name="Lista de Produtos" 
                 component={Products}
                 options={{
-                    title: "Produtos"
-                }} 
+                    title: "Produtos",
+                    headerStyle: {
+                        backgroundColor: '#333'
+                    },
+                    headerTintColor: '#FFF',
+                }}
             />
         </Stack.Navigator>
     );

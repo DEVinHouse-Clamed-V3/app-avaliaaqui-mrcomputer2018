@@ -10,7 +10,7 @@ export default function Presentation({navigation}: any) {
     }
     return (
         <SafeAreaView style={ presentationStyles.container }>
-            <StatusBar  style="auto" />
+            <StatusBar  style="light" />
 
             <View style={ presentationStyles.imageArea}>
                 <Image 

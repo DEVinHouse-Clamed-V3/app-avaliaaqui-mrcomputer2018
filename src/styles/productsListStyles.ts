@@ -8,6 +8,8 @@ export const productsListStyles = StyleSheet.create({
         borderRadius: 16,
         flexDirection: "row",
         overflow: "hidden",
+        elevation: 5,
+        marginBottom: 14,
     },
     image: {
         width: 100,
@@ -31,10 +33,11 @@ export const productsListStyles = StyleSheet.create({
         color: "#999",
     },
     price: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: "bold",
         color: "#333",
         textAlign: "left",
+        marginTop: 10,
     },
     button: {
         fontSize: 14,

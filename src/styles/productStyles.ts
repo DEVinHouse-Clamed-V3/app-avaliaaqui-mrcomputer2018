@@ -16,4 +16,14 @@ export const productStyles = StyleSheet.create({
         color: "#333",
         marginBottom: 20,
     },
+    loading: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    textLoading: {
+        fontSize: 18,
+        color: "#333",
+        marginTop: 10,
+    },
 });
