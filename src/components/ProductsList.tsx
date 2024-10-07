@@ -45,7 +45,7 @@ export default function ProductsList({ item, handleAction }: ProductsListProps) 
                         title="avaliar" 
                         width={100}
                         bgColor="#E59500"
-                        handleAction={handleAction(item.id)} 
+                        handleAction={() => handleAction(item.id)} 
                         fontSize={14}
                     /> 
                 </View>
