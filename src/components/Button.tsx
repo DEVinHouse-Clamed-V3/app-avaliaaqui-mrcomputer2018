@@ -1,5 +1,6 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { buttonStyles } from '../styles/buttonStyles';
+import Loading from './Loading';
 
 type ButtonProps = {
     title: string;
@@ -7,9 +8,10 @@ type ButtonProps = {
     handleAction: Function;
     bgColor: string;
     fontSize?: number;
+    loading?: boolean;
 }
 
-export default function Button({ title, width, handleAction, bgColor, fontSize } : ButtonProps) {
+export default function Button({ title, width, handleAction, bgColor, fontSize, loading } : ButtonProps) {
     return (
         <TouchableOpacity
         style={[ buttonStyles.button, 
@@ -18,7 +20,7 @@ export default function Button({ title, width, handleAction, bgColor, fontSize }
                 width }]} 
         onPress={() => handleAction()}>
             <Text style={[ buttonStyles.textButton, { fontSize: fontSize } ]}>
-                {title}
+                { loading ? <Loading size="small" color='#333' /> : title}
             </Text>
         </TouchableOpacity>
     );

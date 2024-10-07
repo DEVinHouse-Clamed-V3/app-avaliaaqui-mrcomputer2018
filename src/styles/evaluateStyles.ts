@@ -5,12 +5,16 @@ export const evaluateStyles = StyleSheet.create({
         marginBottom: 20,
     },
     input: {
-        backgroundColor: "#fff",
+        backgroundColor: "#f5f5f5",
         borderColor: "#666",
         borderWidth: 1,
         borderRadius: 8,
-        padding: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 20,  
         fontSize: 16,
         color: "#666",
     },
+    checkboxArea: {
+        marginBottom: 40,
+    }
 });

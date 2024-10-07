@@ -4,7 +4,7 @@ export const buttonStyles = StyleSheet.create({
     button: {
         alignItems: "center",
         justifyContent: "center",
-        paddingVertical: 10,
+        paddingVertical: 12,
         paddingHorizontal: 20,
         borderRadius: 16,
     },
