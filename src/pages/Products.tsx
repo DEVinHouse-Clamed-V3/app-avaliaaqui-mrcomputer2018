@@ -14,7 +14,7 @@ type Product = {
     image: string;
 }
 
-export default function Products() {
+export default function Products({navigation}: {navigation: any}) {
 
     const [products, setProducts] = useState<Product[]>([]);
 
@@ -26,7 +26,6 @@ export default function Products() {
         function getProducts() {
             api.get('/products')
             .then((response) => {
-                    console.log("response: " + response.data);
                     setProducts(response.data)
                     setLoading(false);
                 }
@@ -39,6 +38,14 @@ export default function Products() {
         getProducts();
 
     }, []);
+
+    function handleNavigateToEvaluate( id: Product ) {
+        console.log(id);
+        
+        navigation.navigate('Avaliacoes',{
+            id: id,
+        });
+    }
 
     return (
         <View style={ productStyles.container }>
@@ -59,7 +66,10 @@ export default function Products() {
                     data={products}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }: { item: Product }) => (
-                        <ProductsList item={item} />
+                        <ProductsList 
+                            item={item} 
+                            handleAction={() => handleNavigateToEvaluate(item.id as unknown as Product)}
+                        />
                     )}
                     showsVerticalScrollIndicator={false}
                     ListEmptyComponent={() => (

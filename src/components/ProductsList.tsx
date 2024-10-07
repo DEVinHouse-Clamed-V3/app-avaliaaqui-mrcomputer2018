@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { productsListStyles } from '../styles/productsListStyles';
 import Button from './Button';
 
@@ -13,10 +13,12 @@ type Product = {
 
 type ProductsListProps = {
     item: Product;
+    handleAction: Function;
 }
 
 
-export default function ProductsList({ item }: ProductsListProps) {
+export default function ProductsList({ item, handleAction }: ProductsListProps) {
+
     return (
         <View style={ productsListStyles.container}>
             <Image 
@@ -43,7 +45,7 @@ export default function ProductsList({ item }: ProductsListProps) {
                         title="avaliar" 
                         width={100}
                         bgColor="#E59500"
-                        handleAction={() => {}}
+                        handleAction={handleAction(item.id)} 
                         fontSize={14}
                     /> 
                 </View>
