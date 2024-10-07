@@ -59,13 +59,14 @@ export default function Evaluate({route} : {route: any}) {
             recommend: recommend
         })
         .then(response => {
-            alert('Feedback enviado com sucesso!');
             setLoading(false);
             setEmail('');
             setName('');
             setFeedback('');
-            setExperience('0');
+            setExperience('');
             setRecommend(false);
+            setSelected('');
+            alert('Feedback enviado com sucesso!');
         })
         .catch(error => {
             alert('Erro ao enviar feedback!');
@@ -168,7 +169,6 @@ export default function Evaluate({route} : {route: any}) {
                      }}
                     onPress={(recommend: boolean) => {setRecommend(!recommend)}}
                 />
-
             </View>
 
             <Button
