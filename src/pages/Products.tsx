@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Alert } from 'react-native';
 import { productStyles } from '../styles/productStyles';
 import api from '../services/api';
 import ProductsList from '../components/ProductsList';
@@ -27,11 +27,15 @@ export default function Products({navigation}: {navigation: any}) {
             api.get('/products')
             .then((response) => {
                     setProducts(response.data)
-                    setLoading(false);
                 }
             )
             .catch((error) => {
                 console.log("error: " + error);
+                Alert.alert('Erro ao carregar produtos');
+                setLoading(false);
+            })
+            .finally(() => {
+                setLoading(false);
             });
         }
 
@@ -43,7 +47,7 @@ export default function Products({navigation}: {navigation: any}) {
         console.log(id);
         
         navigation.navigate('Avaliacoes',{
-            id: id,
+            prodtcId: id,
         });
     }
 
